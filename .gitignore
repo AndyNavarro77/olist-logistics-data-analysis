@@ -1,0 +1,4 @@
+# Ignorar carpetas de Python y archivos temporales
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
