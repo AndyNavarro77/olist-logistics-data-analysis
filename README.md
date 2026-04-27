@@ -69,9 +69,8 @@ Developed 3 optimized analytical queries:
 - **Geographic Analysis:** aggregates revenue, order volume, average ticket, and shipping cost by customer state
 
 **2 — Statistical Analysis (Python)**
-- **Boxplot analysis:** visualized the distribution of `delay_days` against `review_score` — revealing a clear statistical relationship
+- **Boxplot analysis:** visualized the distribution of `delay_days` against `review_score` — revealing a clear statistical relationship across 96,353 delivered orders
 - **Category analysis:** ranked product categories by average delivery delay to identify operational bottlenecks
-- Dataset: 96,353 delivered orders with valid delivery and review data
 
 **3 — Business Intelligence (Power BI)**
 Built an executive dashboard with 4 KPIs and 5 visualizations telling a complete logistics story.
@@ -100,6 +99,18 @@ The Power BI dashboard was designed to tell a complete story across 5 views:
 - **Top 10 Product Categories by Average Delay** — ranked operational bottlenecks for supply chain action
 - **On-Time Delivery % by State** — geographic SLA compliance across Brazil's 27 states
 - **Orders Over Time** — monthly volume growth from 2016 to 2018 — context for logistics scalability
+
+---
+
+## 🔬 Python Analysis
+
+**Delivery delay vs customer review score — the core statistical finding:**
+
+![Python Boxplot](img/python_boxplot.png)
+
+**Top 10 product categories by average delivery delay — operational bottlenecks identified:**
+
+![Top Categories](img/python_top_categories.png)
 
 ---
 
@@ -156,26 +167,6 @@ olist-logistics-data-analysis/
 ├── LICENSE                                      # MIT License
 └── README_ES.md                                 # Spanish version
 ```
-
----
-
-## 🚀 Getting Started
-
-```bash
-# Clone the repository
-git clone https://github.com/AndyNavarro77/olist-logistics-data-analysis.git
-cd olist-logistics-data-analysis
-
-# Install Python dependencies
-pip install -r requirements.txt
-
-# Open the notebook
-jupyter notebook notebooks/01_delivery_satisfaction_analysis.ipynb
-```
-
-For the SQL analysis, import the CSV files into SQL Server and run the scripts in `sql_scripts/`.
-
-For the Power BI dashboard, open the `.pbix` file in Power BI Desktop and connect to the CSV files in `data/`.
 
 ---
 

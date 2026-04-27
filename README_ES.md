@@ -69,9 +69,8 @@ Desarrollé 3 queries analíticas optimizadas:
 - **Análisis Geográfico:** agrega ingresos, volumen, ticket promedio y costo de envío por estado del cliente
 
 **2 — Análisis Estadístico (Python)**
-- **Análisis de Boxplots:** visualizó la distribución de `días_retraso` contra `review_score` — revelando una relación estadística clara
+- **Análisis de Boxplots:** visualizó la distribución de `días_retraso` contra `review_score` — revelando una relación estadística clara en 96.353 pedidos entregados
 - **Análisis por categoría:** rankeó las categorías de productos por retraso promedio de entrega para identificar cuellos de botella operativos
-- Dataset: 96.353 pedidos entregados con datos válidos de entrega y reseña
 
 **3 — Business Intelligence (Power BI)**
 Construí un dashboard ejecutivo con 4 KPIs y 5 visualizaciones que cuentan una historia logística completa.
@@ -100,6 +99,18 @@ El dashboard en Power BI fue diseñado para contar una historia completa en 5 vi
 - **Top 10 Categorías por Retraso Promedio** — cuellos de botella operativos rankeados para acción en la cadena de suministro
 - **On-Time Delivery % by State** — cumplimiento geográfico del SLA en los 27 estados de Brasil
 - **Orders Over Time** — crecimiento mensual del volumen de 2016 a 2018 — contexto para la escalabilidad logística
+
+---
+
+## 🔬 Análisis Python
+
+**Retraso de entrega vs calificación del cliente — el hallazgo estadístico central:**
+
+![Python Boxplot](img/python_boxplot.png)
+
+**Top 10 categorías de productos por retraso promedio — cuellos de botella operativos identificados:**
+
+![Top Categorías](img/python_top_categories.png)
 
 ---
 
@@ -156,26 +167,6 @@ olist-logistics-data-analysis/
 ├── LICENSE                                      # Licencia MIT
 └── README.md                                    # Versión en inglés
 ```
-
----
-
-## 🚀 Cómo Ejecutarlo
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/AndyNavarro77/olist-logistics-data-analysis.git
-cd olist-logistics-data-analysis
-
-# Instalar dependencias Python
-pip install -r requirements.txt
-
-# Abrir el notebook
-jupyter notebook notebooks/01_delivery_satisfaction_analysis.ipynb
-```
-
-Para el análisis SQL, importá los archivos CSV a SQL Server y ejecutá los scripts en `sql_scripts/`.
-
-Para el dashboard de Power BI, abrí el archivo `.pbix` en Power BI Desktop y conectalo a los archivos CSV en `data/`.
 
 ---
 
