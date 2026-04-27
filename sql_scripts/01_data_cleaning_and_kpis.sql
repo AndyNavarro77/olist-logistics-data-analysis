@@ -11,7 +11,7 @@ JOIN dbo.order_items oi ON o.order_id = oi.order_id
 JOIN dbo.products p ON oi.product_id = p.product_id
 JOIN dbo.product_category_name t ON p.product_category_name = t.column1
 WHERE o.order_status = 'delivered' 
-  AND t.column1 <> 'product_category_name' -- Esto quita la fila de encabezado mal importada
+  AND t.column1 <> 'product_category_name'
 ORDER BY order_date DESC;
 
 
@@ -20,9 +20,7 @@ SELECT
     order_purchase_timestamp AS purchase_date,
     order_delivered_customer_date AS delivered_date,
     order_estimated_delivery_date AS estimated_date,
-    -- Días reales que tardó el envío
     DATEDIFF(day, order_purchase_timestamp, order_delivered_customer_date) AS actual_delivery_days,
-    -- Diferencia contra la promesa (Si es negativo, llegamos antes. Si es positivo, tarde)
     DATEDIFF(day, order_estimated_delivery_date, order_delivered_customer_date) AS delay_days
 FROM dbo.orders
 WHERE order_status = 'delivered' 
@@ -34,7 +32,6 @@ SELECT
     COUNT(DISTINCT o.order_id) AS total_orders,
     SUM(oi.price) AS total_revenue,
     AVG(oi.freight_value) AS avg_shipping_cost,
-    -- Calculamos el ticket promedio por estado
     SUM(oi.price) / COUNT(DISTINCT o.order_id) AS avg_ticket_value
 FROM dbo.orders o
 JOIN dbo.order_items oi ON o.order_id = oi.order_id
